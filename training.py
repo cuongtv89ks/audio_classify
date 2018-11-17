@@ -5,11 +5,17 @@ import librosa
 import librosa.display
 import glob
 import matplotlib.pyplot as plt
+plt.interactive(False)
 
-data, sampling_rate = librosa.load('audio_classify_dataset/train/Train/2022.wav')
+#data, sampling_rate = librosa.load('audio_classify_dataset/train/Train/2022.wav')
+#plt.figure(figsize=(12,4))
+#librosa.display.waveplot(data, sr=sampling_rate)
+#plt.show()
 
-plt.figure(figsize=(12,4))
+train_data_dir = '/audio_classify_dataset/train'
+test_data_dir = 'audio_classify_dataset/test'
 
-librosa.display.waveplot(data, sr=sampling_rate)
+train = pd.read_csv(os.path.join(train_data_dir, 'train.csv'))
+test = pd.read_csv(os.path.join(test_data_dir, 'test.csv'))
 
-
+test['Class'] = 
